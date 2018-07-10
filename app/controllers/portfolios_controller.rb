@@ -33,7 +33,11 @@ class PortfoliosController < ApplicationController
         format.html { render :edit }
       end
     end
-  end
+	end
+
+	def show
+		@portfolio_item = Portfolio.find(params[:id])
+	end
 
 	def portfolio_params
     params.require(:portfolio).permit(:title, :subtitle, :body)
