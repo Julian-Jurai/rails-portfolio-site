@@ -1,10 +1,20 @@
 <h1>Hi, <%=current_user.first_name %> </h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
- <p>Posts</p>
- <p><%=@posts.inspect %></p>
+<p>Posts</p>
+<p><%=@posts.inspect %></p>
 
- <p>Skills</p>
- <p><%=@skills.inspect %></p>
+<p>Skills</p>
+<p><%=@skills.inspect %></p>
 
- <p><%= current_user.class %></p>
+<p><%= current_user.class %></p>
+
+<hr>
+
+<%= content_tag :h1,  class: "my-special-class" do %>
+  Hi, im in a h1  tag
+<% end  %>
+<hr>
+
+
+<%= sample_helper %>
