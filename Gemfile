@@ -59,3 +59,4 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'rails-ujs', '~> 0.1.0'
 
 gem 'devcamp_view_tool_tutorial', '~> 0.1.0'
+gem 'petergate', '~> 2.0', '>= 2.0.1'
