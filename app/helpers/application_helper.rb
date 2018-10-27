@@ -19,4 +19,8 @@ module ApplicationHelper
       content_tag(:p, greeting, class: "source-greeting")
     end
   end
+
+  def copyright_generator
+    @copyright = DeveCampViewTool::Renderer.copyright "Julian Jurai", 'All Rights Reserved'
+  end
 end
