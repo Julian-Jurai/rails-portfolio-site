@@ -1,20 +1,8 @@
-<h1>Hi, <%=current_user.first_name %> </h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<p>Posts</p>
-<p><%=@posts.inspect %></p>
-
-<p>Skills</p>
-<p><%=@skills.inspect %></p>
-
-<p><%= current_user.class %></p>
-
-<hr>
-
-<%= content_tag :h1,  class: "my-special-class" do %>
-  Hi, im in a h1  tag
-<% end  %>
-<hr>
-
-
-<%= sample_helper %>
+<div class="inner cover">
+  <h1 class="cover-heading">Cover your page.</h1>
+  <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text,
+    and add your own fullscreen background photo to make it your own.</p>
+  <p class="lead">
+    <a href="#" class="btn btn-lg btn-default">Learn more</a>
+  </p>
+</div>
