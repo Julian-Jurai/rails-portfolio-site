@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords" content="<%= @seo_keywords %>">
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -18,13 +18,7 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
             <%= render "shared/application_nav" %>
-
-
-
             <%= yield %>
-
-
-
             <%= source_helper("application") %>
             <%= render "shared/application_footer" %>
         </div>
