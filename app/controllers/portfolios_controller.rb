@@ -1,16 +1,24 @@
 class PortfoliosController < ApplicationController
 	before_action :set_portfolio_item, only: [:edit, :update, :destroy, :show]
-	access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+  skip_before_action :verify_authenticity_token, only: [:sort]
+	access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
 
 	layout "portfolio"
 
 
 	def index
-		@portfolio_items = Portfolio.all
+		@portfolio_items = Portfolio.by_position
 	end
 
 	def angular
 		@angular_portfolio_items = Portfolio.angular
+	end
+
+	def sort
+		params[:order].each do |_, value|
+			Portfolio.find(value[:id]).update(position: value[:position])
+		end
+		head :ok
 	end
 
 	def new
