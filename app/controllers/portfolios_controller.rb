@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
 	before_action :set_portfolio_item, only: [:edit, :update, :destroy, :show]
   skip_before_action :verify_authenticity_token, only: [:sort]
-	access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+	access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
 
 	layout "portfolio"
 
