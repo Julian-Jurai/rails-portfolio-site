@@ -18,6 +18,7 @@
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require html.sortable
+//= require cable
 //= require turbolinks
 //= require cocoon
 //= require gritter
