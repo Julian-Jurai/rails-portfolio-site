@@ -7,7 +7,6 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    # @blogs = Blog.all
     @blogs = Blog.page(params[:page]).per(5)
     @page_title = 'My Portfolio Blog'
   end
@@ -16,6 +15,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @page_title = @blog.title
+    @comment = Comment.new
     @seo_keywords = @blog.body
   end
 
@@ -80,7 +80,7 @@ class BlogsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_blog
-    @blog = Blog.friendly.find(params[:id])
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
